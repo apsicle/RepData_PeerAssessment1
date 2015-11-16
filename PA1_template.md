@@ -57,7 +57,7 @@ Let's look at the aggregated data. We'll plot a time series plot below with the 
 
 
 ```r
-plot(stepperinterval$interval, stepperinterval$steps, main = "Average Steps vs. Interval", type = "l")
+plot(stepperinterval$interval, stepperinterval$steps, main = "Average Steps vs. Interval", type = "l", xlab = "interval", ylab = "Number of Steps")
 ```
 
 ![](./PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
@@ -106,7 +106,7 @@ We will repeat the analysis done in part one with the new data.
 stepperday2 <- aggregate(imputeddata$steps, by = list("date" = imputeddata$date), 
                          sum, na.rm = TRUE)
 names(stepperday2)[2] = "steps"
-hist(stepperday$steps)
+hist(stepperday$steps, main = "Total Steps per Day", xlab = "Steps")
 ```
 
 ![](./PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
@@ -173,4 +173,4 @@ plot(weekends$interval, weekends$steps, main = "Weekends", type = "l", xlab = "i
 
 ![](./PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
 
-We see this person seems to be more active on weekends and wakes up slightly later.
+We see this person seems to be more active on weekends and wakes up slightly later on weekends, which seems reasonable.
